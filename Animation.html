@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        #content{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .box{
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: #1ba1e4;
+        }
+        .orange{
+            background-color: hsl(11, 91%, 52%);
+        }
+        .color{
+            display: flex;
+            gap: 2%;
+        }
+        .Bigbox{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .transition{
+            background-color: aquamarine;
+        }
+        .transition:hover{
+            background-color: aqua;
+        }
+
+        @keyframes moveright{
+            0%{
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateX(280px);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+
+        .animation{
+            background-color: rgb(242, 227, 62);
+            animation: moveright 5s infinite;
+        }
+
+        .typography{
+            background-color: rgb(191, 242, 242);
+            font-family: 'Poppins';
+        }
+
+        .translation{
+            background-color: rgb(149, 101, 195);
+            transform: translateX(50px);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="title">
+            <h1>Color Modes, Animation, Transition, and Typography</h1>
+        </div>
+        <div id="content">
+            
+            <div class="color">
+                <div class="red box">Red</div>
+                <div class="blue box">Blue</div>
+                <div class="orange box">Orange</div>
+            </div>
+
+            <div class="transition Bigbox">
+                Hover me to see Transition!
+            </div>
+
+            <div class="animation Bigbox">
+                Css Animation
+            </div>
+
+            <div class="typography Bigbox">
+                Typography with Google Font
+            </div>
+
+            <div class="translation Bigbox">
+                Translation Example
+            </div>
+        </div>
+    </div>
+</body>
+</html>

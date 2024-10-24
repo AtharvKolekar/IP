@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial and Fibonacci Calculator</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .input-section {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    p {
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Factorial & Fibonacci Calculator</h1>
+    
+    <div class="input-section">
+      <label for="factorialInput">Enter a number for Factorial:</label>
+      <input type="number" id="factorialInput">
+      <button onclick="calculateFactorial()">Calculate Factorial</button>
+      <p id="factorialResult"></p>
+    </div>
+
+    <div class="input-section">
+      <label for="fibonacciInput">Enter a number for Fibonacci:</label>
+      <input type="number" id="fibonacciInput">
+      <button onclick="calculateFibonacci()">Calculate Fibonacci</button>
+      <p id="fibonacciResult"></p>
+    </div>
+  </div>
+
+  <script>
+    // Factorial arrow function
+    const factorial = (n) => {
+        return n <= 1 ? 1 : n * factorial(n - 1);
+    };
+
+    // Fibonacci arrow function
+    const fibonacciSeries = (n) => {
+        let series = [0, 1]; 
+        for (let i = 2; i < n; i++) {
+            series.push(series[i - 1] + series[i - 2]);
+        }
+        return series.slice(0, n + 1); 
+    };
+
+    // Calculate and display factorial
+    const calculateFactorial = () => {
+        const num = parseInt(document.getElementById('factorialInput').value);
+        const result = factorial(num);
+        document.getElementById('factorialResult').innerHTML = `Factorial of ${num} is: ${result}`;
+    };
+
+    // Calculate and display Fibonacci
+    const calculateFibonacci = () => {
+        const num = parseInt(document.getElementById('fibonacciInput').value);
+        const result = fibonacciSeries(num);
+        document.getElementById('fibonacciResult').innerHTML = `Fibonacci series up to ${num} is: ${result.join(', ')}`;
+    };
+  </script>
+</body>
+</html>
